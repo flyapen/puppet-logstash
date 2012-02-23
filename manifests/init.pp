@@ -54,7 +54,7 @@ class logstash::shipper (
 
 
   file {
-    '/etc/rc.d/init.d/logstash-shipper':
+    '/etc/init.d/logstash-shipper':
       ensure => 'file',
       group  => '0',
       mode   => '755',
@@ -76,8 +76,7 @@ class logstash::shipper (
 
   service { 'logstash-shipper':
     ensure    => 'running',
-    hasstatus => 'true',
-    enable    => 'true',
+    hasstatus => 'true';
   }
 
 
@@ -111,7 +110,7 @@ class logstash::server(
   }
 
   file {
-    '/etc/rc.d/init.d/logstash-server':
+    '/etc/init.d/logstash-server':
       ensure => 'file',
       group  => '0',
       mode   => '755',
@@ -133,8 +132,7 @@ class logstash::server(
 
   service { 'logstash-server':
     ensure    => 'running',
-    hasstatus => 'true',
-    enable    => 'true',
+    hasstatus => 'true';
   }
 
 
@@ -145,7 +143,7 @@ class logstash::web ($jarname ='logstash-1.1.0-monolithic.jar') {
 
 
   file {
-    '/etc/rc.d/init.d/logstash-web':
+    '/etc/init.d/logstash-web':
       ensure => 'file',
       group  => '0',
       mode   => '755',
@@ -168,8 +166,7 @@ class logstash::web ($jarname ='logstash-1.1.0-monolithic.jar') {
 
   service { 'logstash-web':
     ensure    => 'running',
-    hasstatus => 'true',
-    enable    => 'true',
+    hasstatus => 'true';
   }
 
 
